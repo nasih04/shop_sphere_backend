@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import authRoutes from './routes/auth';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(express.json()); // Middleware to parse JSON bodies
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use(cors());
 
 const MONGOURI = 'mongodb+srv://devnasih:nasih123@cluster0.l1msp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
